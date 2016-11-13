@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="JavaFX-MVC-Parte4-GraficosVendasPorMes.jnlp">
+  <information>
+    <title>JavaFX-MVC-Parte4-GraficosVendasPorMes</title>
+    <vendor>Rafael</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="JavaFX-MVC-Parte4-GraficosVendasPorMes.jar" size="68739" download="eager" />
+    <jar href="lib/postgresql-9.2-1002.jdbc4.jar" size="571894" download="eager" />
+  </resources>
+  <application-desc main-class="javafxmvc.Main"  name="JavaFX-MVC-Parte4-GraficosVendasPorMes" >
+  </application-desc>
+  <update check="always"/>
+</jnlp>
