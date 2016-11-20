@@ -126,16 +126,8 @@ public class FXMLAnchorPaneProcessosVendasDialogController implements Initializa
     public boolean isButtonConfirmarClicked() {
         return buttonConfirmarClicked;
     }
-
-    @FXML
-    public void handleButtonAdicionar() {
-        Produto produto;
-        ItemDeVenda itemDeVenda = new ItemDeVenda();
-        
-        if (comboBoxVendaProduto.getSelectionModel().getSelectedItem() != null) {
-            produto = (Produto) comboBoxVendaProduto.getSelectionModel().getSelectedItem();
-         int qtd  = produto.getQuantidade();
-                 if(qtd > 10)
+public void setEstado(int qtd,Produto produto){
+     if(qtd > 10)
 		{
                            EstadoState  estado = new EstoqueNormal(produto);
 produto.setEstado(estado);
@@ -148,10 +140,51 @@ produto.setEstado(estado);
                           produto.setEstado(estado);
 
                 }
-            if(produto.getQuantidade()>Integer.parseInt(textFieldVendaItemDeVendaQuantidade.getText())){
-                            produto.fazerCompra(Integer.parseInt(textFieldVendaItemDeVendaQuantidade.getText()));
+}
+public boolean verificarNovamenteEstado(Produto produto,int quantidadeItemDeVenda){
+        int q = produto.getQuantidade()- quantidadeItemDeVenda;
+        if(q>=0){
+            setEstado(q,produto);
+        }
+        else{
+            return false;
+        }
+         return verificaEstado(produto);
+}
+public boolean verificaEstado(Produto produto){
+            EstadoState s = produto.getEstado();
+    if(s instanceof EstoqueEmFalta){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Problema!");
+                alert.setContentText("Não existe a quantidade de produtos disponíveis no estoque");
+                alert.show();
+                return false;
+    }
+    else if(s instanceof EstoqueNormal){
+        return true;
+    }else if(s instanceof EstoqueCritico){
+          Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Atenção!");
+                alert.setContentText("O estoque do produto está crítico");
+                alert.show();
+                return true;
+    }
+    return true;
+}
+    @FXML
+    public void handleButtonAdicionar() {
+        Produto produto;
+        ItemDeVenda itemDeVenda = new ItemDeVenda();
+        
+        if (comboBoxVendaProduto.getSelectionModel().getSelectedItem() != null) {
+            produto = (Produto) comboBoxVendaProduto.getSelectionModel().getSelectedItem();
+            setEstado(produto.getQuantidade(),produto);    
+        if(verificaEstado(produto) == true){            
+            if(produto.getQuantidade() >= Integer.parseInt(textFieldVendaItemDeVendaQuantidade.getText())){
                 itemDeVenda.setProduto((Produto) comboBoxVendaProduto.getSelectionModel().getSelectedItem());
                 itemDeVenda.setQuantidade(Integer.parseInt(textFieldVendaItemDeVendaQuantidade.getText()));
+               Boolean bol =  verificarNovamenteEstado(produto,itemDeVenda.getQuantidade());
+         if ( bol == true){
                 double valortotal = itemDeVenda.getProduto().getPreco() * itemDeVenda.getQuantidade();
                 //chamando o metodo do padrão decorator passando em seu parametro o objeto itemDeVenda
                 // e o valor total da compra para adicionar 10 reais caso o checkbox de embrulho seja marcado
@@ -166,13 +199,23 @@ produto.setEstado(estado);
                 observableListItensDeVenda = FXCollections.observableArrayList(venda.getItensDeVenda());
                 tableViewItensDeVenda.setItems(observableListItensDeVenda);
                 textFieldVendaValor.setText(String.format("%.2f", venda.getValor()));
+         }
+         else{
+             Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Problema!");
+                alert.setContentText("Não existe a quantidade solicitada de produtos disponíveis no estoque");
+                alert.show();
+         }
             }else{
                  Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("Problema!");
-                alert.setContentText("Não existe a quantidade de produtos disponíveis no estoque");
+                alert.setContentText("Não existem produtos no estoque");
                 alert.show();
             }
+        }else{
+            
         }
+    }
     }
 //metodo que inicia o padrão decorator 
 

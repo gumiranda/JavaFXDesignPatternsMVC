@@ -21,7 +21,7 @@ public abstract class EstadoState {
 	
 	public void fazerCompra(int quantidade)
 	{
-		produto.setQuantidade(produto.getQuantidade() - quantidade);
+		//produto.setQuantidade(produto.getQuantidade() - quantidade);
 		this.verificarAlteracaoEstado();
 	}
 	
@@ -30,5 +30,5 @@ public abstract class EstadoState {
 		return produto;
 	}
 	
-	protected abstract void verificarAlteracaoEstado();
+	public abstract void verificarAlteracaoEstado();
 }

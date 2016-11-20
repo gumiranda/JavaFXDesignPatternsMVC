@@ -16,7 +16,11 @@ public class FXMLVBoxMainController implements Initializable {
     @FXML
     private MenuItem menuItemCadastrosClientes;
     @FXML
+    private MenuItem menuItemRelatorioVenda;
+    @FXML
     private MenuItem menuItemProcessosVendas;
+    @FXML
+    private MenuItem menuItemPDF;
     @FXML
     private MenuItem menuItemGraficosVendasPorMes;
     @FXML
@@ -29,11 +33,16 @@ public class FXMLVBoxMainController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }   
-    
+
     @FXML
     public void handleMenuItemCadastrosClientes() throws IOException {
         AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/javafxmvc/view/FXMLAnchorPaneCadastrosClientes.fxml"));
         anchorPane.getChildren().setAll(a);
+    }
+    @FXML
+    public void handleMenuItemRelatorioVenda() throws IOException{
+        AnchorPane a = (AnchorPane) FXMLLoader.load(getClass().getResource("/javafxmvc/view/FXMLAnchorPaneRelatoriosVendas.fxml"));
+   anchorPane.getChildren().setAll(a);
     }
             @FXML
     public void     handleMenuItemCadastrosProdutos() throws IOException {

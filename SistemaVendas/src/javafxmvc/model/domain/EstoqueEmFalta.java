@@ -15,10 +15,7 @@ public class EstoqueEmFalta extends EstadoState {
 	
 	public void fazerCompra(int quantidade)
 	{
-     Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setHeaderText("Problema!");
-                alert.setContentText("Não existe a quantidade de produtos disponíveis no estoque");
-                alert.show();	}
+     	}
 	
 	public void verificarAlteracaoEstado()
 	{

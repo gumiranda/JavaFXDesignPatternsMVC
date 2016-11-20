@@ -1,5 +1,12 @@
 package javafxmvc.controller;
 
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperCompileManager;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
@@ -128,7 +135,11 @@ public class FXMLAnchorPaneProcessosVendasController implements Initializable {
                     Produto produto = listItemDeVenda.getProduto();
                     listItemDeVenda.setVenda(vendaDAO.buscarUltimaVenda());
                     itemDeVendaDAO.inserir(listItemDeVenda);
-                    produto.setQuantidade(produto.getQuantidade() - listItemDeVenda.getQuantidade());
+                                        System.out.println("produto.getQuantidade() antes"+produto.getQuantidade());
+                             System.out.println("listItemDeVenda.getQuantidade() antes"+listItemDeVenda.getQuantidade());
+                    produto.setQuantidade(produto.getQuantidade() -listItemDeVenda.getQuantidade());
+                    System.out.println("produto.getQuantidade() depois"+produto.getQuantidade());
+
                     produtoDAO.alterar(produto);
                 }
                 connection.commit();

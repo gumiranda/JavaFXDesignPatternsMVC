@@ -45,7 +45,9 @@ public class Produto implements Serializable {
 	{
 		this.estado = estado;
 	}
-
+public EstadoState getEstado(){
+    return this.estado;
+}
     public int getCdProduto() {
         return cdProduto;
     }
