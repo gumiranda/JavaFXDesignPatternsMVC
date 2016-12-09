@@ -13,7 +13,7 @@
         <items>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="269.0">
                <children>
-                  <TableView fx:id="tableViewVendas" layoutX="28.0" layoutY="29.0" prefHeight="398.0" prefWidth="275.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <TableView fx:id="tableViewVendas" layoutX="28.0" layoutY="29.0" prefHeight="398.0" prefWidth="275.0" style="-fx-background-color: #ADD8E6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                     <columns>
                       <TableColumn fx:id="tableColumnVendaCodigo" prefWidth="53.0" text="Código" />
                       <TableColumn fx:id="tableColumnVendaData" prefWidth="97.0" text="Data" />
@@ -22,7 +22,7 @@
                   </TableView>
                </children>
             </AnchorPane>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: #ADD8E6;">
                <children>
                   <Label layoutX="100.0" layoutY="14.0" text="Detalhes da Venda">
                      <font>
@@ -56,8 +56,8 @@
                   </GridPane>
                   <Group AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
                      <children>
-                        <Button fx:id="buttonRemover" layoutX="233.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleButtonRemover" prefHeight="25.0" prefWidth="65.0" text="Remover" />
-                        <Button fx:id="buttonInserir" layoutX="83.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="25.0" prefWidth="65.0" text="Inserir" />
+                        <Button fx:id="buttonRemover" layoutX="233.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleButtonRemover" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #FFA500;" text="Remover" />
+                        <Button fx:id="buttonInserir" layoutX="83.0" layoutY="323.0" mnemonicParsing="false" onAction="#handleButtonInserir" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #FFA500;" text="Inserir" />
                         <Button fx:id="buttonAlterar" layoutX="158.0" layoutY="323.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="65.0" text="Alterar" visible="false" />
                      </children>
                   </Group>

@@ -144,7 +144,16 @@ public class FXMLAnchorPaneCadastrosProdutosController implements Initializable 
 
     @FXML
     public void handleButtonRemover() throws IOException, SQLException {
-        Produto produto = tableViewProdutos.getSelectionModel().getSelectedItem();
+         Produto produto = tableViewProdutos.getSelectionModel().getSelectedItem();
+        if (produto!= null) {
+            produtoDAO.remover(produto);
+            carregarTableViewProduto();
+        } else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setContentText("Por favor, escolha um produto na Tabela!");
+            alert.show();
+        }
+        /*Produto produto = tableViewProdutos.getSelectionModel().getSelectedItem();
         if (produto != null) {
             connection.setAutoCommit(false);
             produtoDAO.setConnection(connection);
@@ -156,7 +165,7 @@ public class FXMLAnchorPaneCadastrosProdutosController implements Initializable 
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setContentText("Por favor, escolha um produto na Tabela!");
             alert.show();
-        }
+        }*/
     }
 
     public boolean showFXMLAnchorPaneCadastrosProdutosDialog(Produto produto) throws IOException {

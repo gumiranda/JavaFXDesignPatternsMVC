@@ -156,7 +156,7 @@ public boolean verificaEstado(Produto produto){
     if(s instanceof EstoqueEmFalta){
         Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setHeaderText("Problema!");
-                alert.setContentText("Não existe a quantidade de produtos disponíveis no estoque");
+                alert.setContentText("Estoque em Falta!");
                 alert.show();
                 return false;
     }

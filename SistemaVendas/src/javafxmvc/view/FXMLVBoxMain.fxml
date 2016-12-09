@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -8,7 +9,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLVBoxMainController">
    <children>
-      <MenuBar>
+      <MenuBar style="-fx-background-color: #FFA500;">
         <menus>
           <Menu mnemonicParsing="false" text="Cadastros">
             <items>
@@ -29,11 +30,18 @@
           </Menu>
             <Menu mnemonicParsing="false" text="Relatórios">
               <items>
-                <MenuItem fx:id="menuItemRelatorioVenda" mnemonicParsing="false" onAction="#handleMenuItemRelatorioVenda" text="Vendas" />
+                <MenuItem fx:id="itemMenuRelatorioVenda" mnemonicParsing="false" onAction="#handleMenuItemNovo" text="Novo" />
               </items>
             </Menu>
         </menus>
       </MenuBar>
-      <AnchorPane fx:id="anchorPane" prefHeight="378.0" prefWidth="600.0" />
+      <AnchorPane fx:id="anchorPane" prefHeight="378.0" prefWidth="600.0" style="-fx-background-color: #00BFFF;">
+         <children>
+            <ImageView fitHeight="234.0" fitWidth="459.0" layoutX="71.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../15328284_10207269990299911_1433880429_n%20(1).png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
    </children>
 </VBox>

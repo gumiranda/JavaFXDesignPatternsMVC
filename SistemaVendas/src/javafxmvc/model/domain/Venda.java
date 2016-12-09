@@ -1,6 +1,7 @@
 package javafxmvc.model.domain;
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.List;
 

@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="344.0" prefWidth="443.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasDialogController">
+<AnchorPane id="AnchorPane" prefHeight="344.0" prefWidth="443.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneProcessosVendasDialogController">
    <children>
       <GridPane layoutX="81.0" layoutY="33.0" prefHeight="251.0" prefWidth="324.0">
         <columnConstraints>
@@ -51,7 +51,7 @@
             <CheckBox fx:id="checkBoxPresente" mnemonicParsing="false" text="Embalar para presente" GridPane.columnIndex="1" GridPane.rowIndex="2" />
          </children>
       </GridPane>
-      <Button fx:id="buttonConfirmar" layoutX="252.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" text="Confirmar" />
-      <Button fx:id="buttonCancelar" layoutX="343.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleButtonCancelar" text="Cancelar" />
+      <Button fx:id="buttonConfirmar" layoutX="252.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #FFA500;" text="Confirmar" />
+      <Button fx:id="buttonCancelar" layoutX="343.0" layoutY="297.0" mnemonicParsing="false" onAction="#handleButtonCancelar" style="-fx-background-color: #FFA500;" text="Cancelar" />
    </children>
 </AnchorPane>

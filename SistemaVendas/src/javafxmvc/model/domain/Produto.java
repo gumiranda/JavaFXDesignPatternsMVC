@@ -45,9 +45,7 @@ public class Produto implements Serializable {
 	{
 		this.estado = estado;
 	}
-public EstadoState getEstado(){
-    return this.estado;
-}
+
     public int getCdProduto() {
         return cdProduto;
     }
@@ -91,6 +89,10 @@ public EstadoState getEstado(){
     @Override
     public String toString() {
         return this.nome;
+    }
+
+    public EstadoState getEstado() {
+       return this.estado;
     }
     
 }

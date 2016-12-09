@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="261.0" prefWidth="452.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneCadastrosProdutosDialogController">
+<AnchorPane id="AnchorPane" prefHeight="261.0" prefWidth="452.0" style="-fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxmvc.controller.FXMLAnchorPaneCadastrosProdutosDialogController">
    <children>
       <GridPane layoutX="33.0" layoutY="25.0" prefHeight="150.0" prefWidth="391.0">
         <columnConstraints>
@@ -32,8 +32,8 @@
       </GridPane>
       <Group layoutX="15.0" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0">
          <children>
-            <Button fx:id="buttonConfirmar" layoutX="97.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" text="Confirmar" />
-            <Button fx:id="buttonCancelar" layoutX="208.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleButtonCancelar" text="Cancelar" />
+            <Button fx:id="buttonConfirmar" layoutX="97.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleButtonConfirmar" style="-fx-background-color: #FFA500;" text="Confirmar" />
+            <Button fx:id="buttonCancelar" layoutX="208.0" layoutY="137.0" mnemonicParsing="false" onAction="#handleButtonCancelar" style="-fx-background-color: #FFA500;" text="Cancelar" />
          </children>
       </Group>
    </children>
